@@ -1,0 +1,1679 @@
+* {
+   box-sizing: border-box;
+   --main-color: #ff6b00;
+   --text-color-l: #ffffff;
+   --text-color-d: #454547;
+   --bg-color-l: #1d1d1f;
+   --bg-color-d: #000000;
+}
+@font-face {
+   font-family: 'Proxima Nova';
+   src: url('../fonts/ProximaNova-Regular.eot');
+   src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+       url('../fonts/ProximaNova-Regular.woff') format('woff'),
+       url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
+       url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+   font-weight: 400;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Proxima Nova';
+   src: url('../fonts/ProximaNova-Bold.eot');
+   src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
+       url('../fonts/ProximaNova-Bold.woff') format('woff'),
+       url('../fonts/ProximaNova-Bold.ttf') format('truetype'),
+       url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Proxima Nova';
+   src: url('../fonts/ProximaNova-Light.eot');
+   src: url('../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ProximaNova-Light.woff2') format('woff2'),
+       url('../fonts/ProximaNova-Light.woff') format('woff'),
+       url('../fonts/ProximaNova-Light.ttf') format('truetype'),
+       url('../fonts/ProximaNova-Light.svg#ProximaNova-Light') format('svg');
+   font-weight: 300;
+   font-style: normal;
+   font-display: swap;
+}
+@font-face {
+   font-family: 'Proxima Nova';
+   src: url('../fonts/ProximaNova-Semibold.eot');
+   src: url('../fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+       url('../fonts/ProximaNova-Semibold.woff') format('woff'),
+       url('../fonts/ProximaNova-Semibold.ttf') format('truetype'),
+       url('../fonts/ProximaNova-Semibold.svg#ProximaNova-Semibold') format('svg');
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+button,
+input,
+p,
+blockquote,
+th,
+td {
+   margin: 0;
+   padding: 0
+}
+fieldset,
+img {
+   border: 0
+}
+img,
+object,
+embed {
+   vertical-align: bottom
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+   font-style: normal;
+   font-weight: normal
+}
+ol,
+ul {
+   list-style: none
+}
+caption,
+th {
+   text-align: left
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: 100%
+}
+q:before,
+q:after {
+   content: ''
+}
+a {
+   text-decoration: none;
+   cursor: pointer
+}
+input,
+textarea,
+button {
+   outline: none
+}
+input::-ms-clear {
+   display: none
+}
+body {
+   background-color: var(--bg-color-d);
+   line-height: 1.2
+}
+section {
+   padding: 30px 0
+}
+section .more {
+   display: flex;
+   justify-content: center;
+   margin-top: 15px
+}
+
+section .more-btn {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 600;
+   color: var(--text-color-d);
+   background-color: var(--bg-color-l);
+   border-radius: 20px;
+   padding: 12px 45px
+}
+.wrapper {
+   margin: 0 auto
+}
+
+.container {
+   padding: 0 20px
+}
+
+@media only screen and (max-width: 767px) {
+   .container {
+      padding: 0 10px
+   }
+}
+
+.main {
+   display: flex
+}
+
+.sidebar {
+   flex: 0 0 240px;
+   border-radius: 0 20px 20px 0;
+   background-color: var(--bg-color-l);
+   padding: 15px 0;
+   margin-left: -240px;
+   transition: .3s
+}
+
+.sidebar.mob-menu {
+   margin-left: 0
+}
+
+@media only screen and (max-width: 1023px) {
+   .sidebar.mob-menu {
+      margin-left: -240px
+   }
+}
+
+.sidebar.mob-menu-s {
+   margin-left: 0
+}
+
+.sidebar-nav {
+   display: none;
+   padding: 0 25px;
+   margin-bottom: 25px
+}
+
+@media only screen and (max-width: 991px) {
+   .sidebar-nav {
+      display: flex
+   }
+}
+
+.sidebar-nav .menu {
+   flex-direction: column
+}
+
+.sidebar-nav .menu li {
+   display: flex;
+   align-items: center
+}
+
+.sidebar-nav .menu li .menu-link {
+   width: 100%;
+   padding: 12px 0;
+   display: flex;
+   align-items: center;
+   font-family: 'Proxima Nova';
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--text-color-l)
+}
+
+.sidebar-nav .menu li .menu-link .icon {
+   width: 20px;
+   height: 20px;
+   fill: var(--text-color-l);
+   margin-right: 10px
+}
+
+.sidebar-list {
+   display: flex;
+   flex-direction: column;
+   flex: 100%;
+   padding: 0 5px;
+}
+
+.sidebar-title {
+   font-family: 'Proxima Nova';
+   font-size: 20px;
+   font-weight: 700;
+   color: var(--main-color);
+   padding: 0 20px;
+   margin-bottom: 15px
+}
+
+.sidebar-link {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   font-family: 'Proxima Nova';
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   border-radius: 20px;
+   border-bottom: 1px solid transparent;
+   padding: 10px 20px
+}
+
+.sidebar-link .link-name {
+   display: inline-block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   margin-right: 5px
+}
+
+.sidebar-link .number {
+   color: var(--text-color-d);
+}
+
+@media only screen and (max-width: 1023px) {
+   .sidebar {
+      width: 240px;
+      position: absolute;
+      top: 81px;
+      z-index: 2
+   }
+}
+
+.content {
+   flex: 1 1
+}
+
+.header {
+   background-color: var(--bg-color-d);
+   border-bottom: 1px solid var(--bg-color-l);
+}
+
+.header-inner {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+   padding: 20px 0
+}
+
+.header .burger {
+   display: flex;
+   flex: 0 0 25px;
+   width: 25px;
+   height: 25px;
+   border: 0;
+   background: none;
+   cursor: pointer;
+   z-index: 3;
+   margin-right: 20px;
+   position: relative
+}
+@media only screen and (max-width: 1023px) {
+   .header .burger {
+      display: none
+   }
+}
+@media only screen and (max-width: 525px) {
+   .header .burger {
+      margin-right: 10px
+   }
+}
+.header .burger span {
+   width: 25px;
+   height: 3px;
+   background-color: var(--text-color-l);
+   position: absolute;
+   top: 11px;
+   left: 0
+}
+.header .burger::before,
+.header .burger::after {
+   content: '';
+   display: block;
+   width: 25px;
+   height: 3px;
+   background-color: var(--text-color-l);
+   position: absolute
+}
+.header .burger::before {
+   top: 0
+}
+.header .burger::after {
+   bottom: 0
+}
+.header .burger.mob-menu span {
+   display: none
+}
+.header .burger.mob-menu::before {
+   top: 11px;
+   transform: rotate(-45deg);
+   transition: transform .3s
+}
+.header .burger.mob-menu::after {
+   bottom: 11px;
+   transform: rotate(45deg);
+   transition: transform .3s
+}
+.header .burger-s {
+   display: none;
+   flex: 0 0 25px;
+   width: 25px;
+   height: 25px;
+   border: 0;
+   background: none;
+   cursor: pointer;
+   z-index: 3;
+   margin-right: 20px;
+   position: relative
+}
+@media only screen and (max-width: 1023px) {
+   .header .burger-s {
+      display: flex
+   }
+}
+@media only screen and (max-width: 525px) {
+   .header .burger-s {
+      margin-right: 10px
+   }
+}
+.header .burger-s span {
+   width: 25px;
+   height: 3px;
+   background-color: var(--text-color-l);
+   position: absolute;
+   top: 11px;
+   left: 0
+}
+.header .burger-s::before,
+.header .burger-s::after {
+   content: '';
+   display: block;
+   width: 25px;
+   height: 3px;
+   background-color: var(--text-color-l);
+   position: absolute
+}
+.header .burger-s::before {
+   top: 0
+}
+.header .burger-s::after {
+   bottom: 0
+}
+.header .burger-s.mob-menu-s span {
+   display: none
+}
+.header .burger-s.mob-menu-s::before {
+   top: 11px;
+   transform: rotate(-45deg);
+   transition: transform .3s
+}
+.header .burger-s.mob-menu-s::after {
+   bottom: 11px;
+   transform: rotate(45deg);
+   transition: transform .3s
+}
+
+.header .logo {
+   display: flex;
+   justify-content: center;
+   flex: 0 0;
+   margin-right: 10px
+}
+
+.header .logo a {
+   display: inline-block
+}
+
+@media only screen and (max-width: 991px) {
+   .header .logo {
+      flex: 1 1
+   }
+}
+
+.header-nav {
+   display: flex;
+   justify-content: center;
+   flex: 1 1;
+   margin-right: 15px
+}
+
+@media only screen and (max-width: 991px) {
+   .header-nav {
+      display: none
+   }
+}
+
+.header-nav .menu {
+   display: flex
+}
+
+.header-nav .menu li {
+   display: flex
+}
+
+.header-nav .menu li .menu-link {
+   display: flex;
+   align-items: center;
+   font-family: 'Proxima Nova';
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   padding: 10px 20px
+}
+
+@media only screen and (max-width: 1100px) {
+   .header-nav .menu li .menu-link {
+      padding: 10px 15px
+   }
+}
+
+.header-nav .menu li .menu-link .icon {
+   width: 20px;
+   height: 20px;
+   fill: var(--text-color-l);
+   margin-bottom: 3px;
+   margin-right: 10px
+}
+
+.header-search {
+   display: flex;
+   flex: 0 0 210px;
+   height: 40px;
+   margin-right: 20px;
+   position: relative
+}
+
+@media only screen and (max-width: 991px) {
+   .header-search {
+      opacity: 0;
+      visibility: hidden;
+      z-index: 3;
+      margin-right: 0;
+      position: absolute;
+      right: -5px;
+      left: -5px;
+   }
+
+   .header-search.mob-search {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s
+   }
+}
+
+.header-search form {
+   width: 100%
+}
+.header-search .search {
+   width: 100%;
+   height: 100%;
+   border-radius: 20px;
+   border: 0;
+   color: var(--text-color-l);
+   background-color: var(--bg-color-l);
+   padding: 0 50px 0 25px
+}
+.header-search .search::placeholder {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-l)
+}
+.header-search .search:focus::placeholder {
+   color: var(--text-color-d);
+   transition: all .3s
+}
+.header-search .search:focus {
+   background-color: var(--text-color-l);
+   color: var(--text-color-d);
+   transition: all .3s
+}
+.header-search .search:focus ~ .close .icon {
+   fill: var(--text-color-d);
+   transition: all .3s
+}
+.header-search .search:focus ~ .search-btn .icon {
+   fill: var(--text-color-d);
+   transition: all .3s
+}
+@media only screen and (max-width: 991px) {
+   .header-search .search {
+      padding: 0 50px 0 45px
+   }
+}
+.header-search .search-btn {
+   border: 0;
+   background: none;
+   cursor: pointer;
+   padding: 0 10px;
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   right: 8px
+}
+.header-search .search-btn .icon {
+   width: 22px;
+   height: 22px;
+   fill: var(--text-color-l)
+}
+.header-search .close {
+   display: none;
+   border: 0;
+   background: none;
+   cursor: pointer;
+   padding: 10px;
+   position: absolute;
+   top: 3px;
+   left: 12px
+}
+@media only screen and (max-width: 991px) {
+   .header-search .close {
+      display: block
+   }
+}
+.header-search .close .icon {
+   width: 10px;
+   height: 10px;
+   fill: var(--text-color-l)
+}
+.header .mob-search-btn {
+   display: none;
+   flex: 0 0 35px;
+   height: 35px;
+   align-items: center;
+   justify-content: center;
+   border: 0;
+   border-radius: 10px;
+   background-color: var(--bg-color-l);
+   cursor: pointer;
+   margin-right: 15px
+}
+@media only screen and (max-width: 991px) {
+   .header .mob-search-btn {
+      display: flex
+   }
+}
+@media only screen and (max-width: 425px) {
+   .header .mob-search-btn {
+      margin-right: 10px
+   }
+}
+.header .mob-search-btn .icon {
+   width: 22px;
+   height: 22px;
+   fill: var(--text-color-l)
+}
+.header .login-btn {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 0 0 100px;
+   height: 40px;
+   border: 0;
+   border-radius: 20px;
+   cursor: pointer;
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   background-color: var(--bg-color-l);
+   padding: 5px 10px
+}
+.header .login-btn .icon {
+   width: 18px;
+   height: 18px;
+   fill: var(--text-color-l);
+   margin-right: 10px
+}
+@media only screen and (max-width: 1100px) {
+   .header .login-btn {
+      flex: 0 0 40px;
+      height: 40px
+   }
+
+   .header .login-btn .icon {
+      margin-right: 0
+   }
+
+   .header .login-btn span {
+      display: none
+   }
+}
+@media only screen and (max-width: 991px) {
+   .header .login-btn {
+      flex: 0 0 35px;
+      height: 35px;
+      border-radius: 10px;
+   }
+}
+
+.videos .title,
+.category .title,
+.studios .title,
+.tags .title,
+.models .title,
+.description .title,
+.categories .title {
+   font-family: 'Proxima Nova';
+   font-size: 24px;
+   font-weight: 700;
+   color: var(--text-color-l);
+   margin-bottom: 20px
+}
+
+@media only screen and (max-width: 767px) {
+
+   .videos .title,
+   .category .title,
+   .studios .title,
+   .tags .title,
+   .models .title,
+   .categories .title {
+      font-size: 20px
+   }
+}
+
+@media only screen and (max-width: 425px) {
+
+   .videos .title,
+   .category .title,
+   .studios .title,
+   .tags .title,
+   .models .title,
+   .categories .title {
+      font-size: 18px
+   }
+}
+
+.card-list {
+   display: flex;
+   flex-wrap: wrap;
+   margin: -10px
+}
+
+.card-item {
+   width: 20%;
+   padding: 10px
+}
+
+@media only screen and (max-width: 1450px) {
+   .card-item {
+      width: 25%
+   }
+}
+
+@media only screen and (max-width: 1100px) {
+   .card-item {
+      width: 33.33%
+   }
+}
+
+@media only screen and (max-width: 680px) {
+   .card-item {
+      width: 50%
+   }
+}
+
+@media only screen and (max-width: 425px) {
+   .card-item {
+      width: 100%
+   }
+}
+
+.card {
+   display: inline-block;
+   width: 100%
+}
+
+.card-top {
+   display: block;
+   position: relative;
+   border-radius: 15px;
+   margin-bottom: 10px
+}
+
+.card-img {
+   border-radius: 15px;
+}
+
+.card-img img {
+   opacity: 1;
+   width: 100%;
+   border-radius: 15px;
+}
+
+.card-bottom .card-title {
+   display: inline-block;
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-height: 32px
+}
+
+.card .duration {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4px 8px;
+   background-color: rgba(0, 0, 0, 0.8);
+   border-radius: 10px;
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   position: absolute;
+   top: 10px;
+   left: 10px
+}
+
+.card .rait {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4px 8px;
+   background-color: rgba(0, 0, 0, 0.8);
+   border-radius: 10px;
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   position: absolute;
+   top: 10px;
+   right: 10px
+}
+
+.card .quality {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4px 8px;
+   background-color: rgba(0, 0, 0, 0.8);
+   border-radius: 10px;
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   position: absolute;
+   bottom: 10px;
+   right: 10px
+}
+
+@media only screen and (max-width: 767px) {
+   .models .title {
+      font-size: 20px
+   }
+}
+
+@media only screen and (max-width: 425px) {
+   .models .title {
+      font-size: 18px
+   }
+}
+
+.models .card-item {
+   width: 16.666%
+}
+
+@media only screen and (max-width: 1300px) {
+   .models .card-item {
+      width: 20%
+   }
+}
+
+@media only screen and (max-width: 1100px) {
+   .models .card-item {
+      width: 25%
+   }
+}
+
+@media only screen and (max-width: 680px) {
+   .models .card-item {
+      width: 33.33%
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   .models .card-item {
+      width: 50%
+   }
+}
+
+.models .card-item .quantity {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 4px 10px;
+   background-color: rgba(0, 0, 0, 0.8);
+   border-radius: 10px;
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   position: absolute;
+   bottom: 10px;
+   left: 10px
+}
+
+.pagination {
+   display: flex;
+   justify-content: center;
+   padding: 15px 0 20px
+}
+
+@media only screen and (max-width: 991px) {
+   .pagination {
+      padding: 10px 0 15px
+   }
+}
+
+@media only screen and (max-width: 525px) {
+   .pagination {
+      padding: 10px 0
+   }
+}
+
+.pagination a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 38px;
+   height: 38px;
+   background-color: var(--bg-color-l);
+   border-radius: 50%;
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 600;
+   color: var(--text-color-d);
+   margin-right: 8px
+}
+
+.pagination a.active {
+   background-color: var(--main-color);
+   color: var(--text-color-l);
+   cursor: default;
+}
+
+@media only screen and (max-width: 767px) {
+   .pagination a {
+      width: 40px;
+      height: 40px;
+      font-size: 14px
+   }
+}
+
+.pagination .arrow-prev {
+   display: flex;
+   transform: rotate(180deg)
+}
+
+.pagination .arrow-next {
+   margin-right: 0
+}
+
+.pagination .arrow .icon {
+   width: 10px;
+   height: 20px;
+   fill: var(--text-color-d)
+}
+
+.pagination .all {
+   background: none
+}
+
+@media only screen and (max-width: 640px) {
+
+   .pagination .all,
+   .pagination .last {
+      display: none
+   }
+}
+
+@media only screen and (max-width: 991px) {
+
+   .pagination .seven,
+   .pagination .eight {
+      display: none
+   }
+}
+
+@media only screen and (max-width: 767px) {
+
+   .pagination .four,
+   .pagination .five,
+   .pagination .six {
+      display: none
+   }
+}
+
+@media only screen and (max-width: 640px) {
+
+   .pagination .two,
+   .pagination .three {
+      display: none
+   }
+}
+
+.tags-list {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   margin: -4px
+}
+
+.tags-item {
+   padding: 4px
+}
+
+.tags-list .tags-link {
+   display: flex;
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d);
+   background-color: var(--bg-color-l);
+   border-radius: 15px;
+   padding: 6px 12px
+}
+
+.categories {
+   padding-bottom: 15px
+}
+
+.categories .content {
+   display: flex;
+   flex-wrap: wrap;
+   margin: -10px 0
+}
+
+@media only screen and (max-width: 767px) {
+   .categories .content {
+      margin: -10px 0
+   }
+}
+
+@media only screen and (max-width: 380px) {
+   .categories .content {
+      margin: 0
+   }
+}
+
+.categories .content .list {
+   display: flex;
+   flex-direction: column;
+   width: 20%;
+   padding: 10px 0
+}
+
+@media only screen and (max-width: 1200px) {
+   .categories .content .list {
+      width: 25%
+   }
+}
+
+@media only screen and (max-width: 767px) {
+   .categories .content .list {
+      width: 33.33%;
+      padding: 10px 0
+   }
+}
+
+@media only screen and (max-width: 568px) {
+   .categories .content .list {
+      width: 50%
+   }
+}
+
+@media only screen and (max-width: 380px) {
+   .categories .content .list {
+      width: 100%;
+      padding: 0
+   }
+}
+
+.categories .content .list .item {
+   display: flex;
+   align-items: center
+}
+
+.categories .content .list .item a {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   border-radius: 15px;
+   font-family: 'Proxima Nova';
+   font-size: 15px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   padding: 6px 15px
+}
+
+.categories .content .list .item a .category {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   margin-right: 5px
+}
+
+.categories .content .list .item a .number {
+   font-size: 14px;
+   border-radius: 2px;
+   color: var(--text-color-d);
+}
+
+.description p {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.5;
+   color: var(--text-color-d)
+}
+
+.footer {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: var(--bg-color-d);
+   border-top: 1px solid var(--bg-color-l);
+   padding: 25px
+}
+
+@media only screen and (max-width: 991px) {
+   .footer {
+      flex-direction: column;
+      justify-content: center
+   }
+}
+
+.footer .logo {
+   margin-right: 25px
+}
+
+@media only screen and (max-width: 991px) {
+   .footer .logo {
+      margin-right: 0;
+      margin-bottom: 20px
+   }
+}
+
+.footer .logo a {
+   display: inline-block
+}
+
+.footer .logo a img {
+   width: 100%
+}
+
+.footer .dscr {
+   flex: 1 1;
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d)
+}
+
+@media only screen and (max-width: 991px) {
+   .footer .dscr {
+      text-align: center
+   }
+}
+
+.media {
+   display: flex
+}
+
+.media .video {
+   display: flex;
+   flex-direction: column;
+   flex: 1 1;
+   margin-right: 15px;
+}
+
+.media .video .player {
+   border-radius: 15px;
+   margin-bottom: 20px
+}
+
+.media .video .player img {
+   border-radius: 15px;
+   width: 100%
+}
+
+.media-body {
+   display: flex;
+   flex-direction: column;
+}
+
+.media-body .tabs {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 25px
+}
+
+.media-body .tabs .tab {
+   display: flex;
+   flex: 0 0;
+   align-items: center;
+   cursor: pointer;
+   margin-right: 25px
+}
+
+@media only screen and (max-width: 800px) {
+   .media-body .tabs .tab {
+      order: 2
+   }
+}
+
+.media-body .tabs .tab.active {
+   cursor: default;
+}
+
+.media-body .tabs .tab.active span {
+   color: var(--text-color-l);
+   transition: border .3s
+}
+
+.media-body .tabs .tab.active .icon {
+   fill: var(--text-color-l);
+   transition: border .3s
+}
+
+.media-body .tabs .tab .icon {
+   width: 23px;
+   height: 23px;
+   fill: var(--text-color-d);
+   margin-right: 8px
+}
+
+.media-body .tabs .tab span {
+   font-family: 'Proxima Nova';
+   font-size: 16px;
+   font-weight: 400;
+   color: var(--text-color-d);
+}
+
+@media only screen and (max-width: 425px) {
+   .media-body .tabs .descr {
+      margin-bottom: 15px
+   }
+
+   .media-body .tabs .comments {
+      flex: 100%
+   }
+}
+
+.media-body .tabs .video-box {
+   display: flex;
+   flex-wrap: wrap;
+   flex: 1 1;
+   align-items: center;
+   justify-content: flex-end
+}
+
+@media only screen and (max-width: 800px) {
+   .media-body .tabs .video-box {
+      display: flex;
+      order: 1;
+      flex: 100%;
+      justify-content: space-between;
+      margin-bottom: 20px
+   }
+}
+
+.media-body .tabs .video-box .rating {
+   display: flex;
+   flex: 0 0;
+   align-items: center;
+   justify-content: center
+}
+
+@media only screen and (max-width: 800px) {
+   .media-body .tabs .video-box .rating {
+      justify-content: flex-start;
+      flex: 1 1
+   }
+}
+
+.media-body .tabs .video-box .rating .progress-wrap {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin-right: 10px
+}
+
+.media-body .tabs .video-box .rating .progress-wrap span {
+   font-family: 'Proxima Nova';
+   font-size: 15px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   margin-bottom: 5px
+}
+
+.media-body .tabs .video-box .rating .progress-wrap .progress {
+   width: 80px;
+   height: 6px;
+   background-color: var(--text-color-d);
+   border-radius: 3px;
+   position: relative
+}
+
+.media-body .tabs .video-box .rating .progress-wrap .progress-inner {
+   width: 71%;
+   background-color: var(--main-color);
+   border-radius: 3px;
+   position: absolute;
+   top: 0;
+   bottom: 0
+}
+
+.media-body .tabs .video-box .rating .like,
+.media-body .tabs .video-box .rating .dislike {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   width: 30px;
+   height: 30px;
+   border: 0;
+   border-radius: 3px;
+   background: none;
+   margin-right: 4px
+}
+
+.media-body .tabs .video-box .rating .icon-like {
+   width: 30px;
+   height: 30px;
+   fill: var(--main-color)
+}
+
+.media-body .tabs .video-box .rating .icon-dislike {
+   width: 30px;
+   height: 30px;
+   fill: var(--text-color-l)
+}
+
+.media-body .tabs .video-box .favourite {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   flex: 1 1;
+   margin-right: 20px;
+   cursor: pointer
+}
+
+@media only screen and (max-width: 800px) {
+   .media-body .tabs .video-box .favourite {
+      justify-content: flex-start;
+      flex: 0 0
+   }
+}
+
+.media-body .tabs .video-box .favourite button {
+   width: 18px;
+   height: 18px;
+   cursor: pointer;
+   border: 0;
+   border-radius: 3px;
+   background: none;
+   margin-right: 8px
+}
+
+.media-body .tabs .video-box .favourite button .icon {
+   width: 20px;
+   height: 20px;
+   fill: var(--text-color-l)
+}
+
+.media-body .tabs .video-box .favourite span {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-l);
+   white-space: nowrap
+}
+
+@media only screen and (max-width: 1200px) {
+   .media-body .tabs .video-box .favourite span {
+      display: none
+   }
+}
+
+.media-body .descr-info {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d);
+   line-height: 1.5;
+   margin-bottom: 20px
+}
+
+.media-body .descr .info-item {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   margin-bottom: 12px
+}
+
+.media-body .descr .info-item span {
+   font-family: 'Proxima Nova';
+   font-size: 15px;
+   font-weight: 600;
+   color: var(--text-color-l);
+   margin-right: 12px
+}
+
+.media-body .descr .info-item a {
+   font-family: 'Proxima Nova';
+   font-size: 15px;
+   font-weight: 400;
+   color: var(--text-color-d);
+}
+
+.media-body .descr .info-item a::after {
+   content: ',';
+   margin-right: 5px
+}
+
+.media-body .descr .info-item a:last-child::after {
+   display: none
+}
+
+.media-body .comments .comment {
+   display: flex;
+   margin-bottom: 15px
+}
+
+.media-body .comments .comment-img img {
+   border-radius: 10px;
+   margin-right: 15px
+}
+
+.media-body .comments .comment-cnt .name {
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-d);
+   padding-top: 5px;
+   margin-bottom: 5px
+}
+
+.media-body .comments .comment-cnt .name span {
+   font-family: 'Proxima Nova';
+   font-size: 15px;
+   font-weight: 600;
+   color: var(--main-color);
+   margin-right: 6px
+}
+
+.media-body .comments .comment-cnt .text {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d);
+}
+
+.media-body .comments .form-comment {
+   width: 100%;
+   max-width: 600px;
+   position: relative
+}
+
+.media-body .comments .form-comment textarea {
+   width: 100%;
+   height: 150px;
+   border-radius: 15px;
+   border: 0;
+   background-color: var(--bg-color-l);
+   color: var(--text-color-l);
+   padding: 15px;
+   margin-top: 10px;
+   resize: none
+}
+
+.media-body .comments .form-comment textarea:focus::placeholder {
+   color: var(--text-color-l);
+}
+
+.media-body .comments .form-comment textarea::placeholder {
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d);
+}
+
+.media-body .comments .form-comment .comment-btn {
+   width: 100px;
+   height: 30px;
+   border: 0;
+   border-radius: 8px;
+   background: var(--text-color-l);
+   font-family: 'Proxima Nova';
+   font-size: 14px;
+   font-weight: 400;
+   color: var(--text-color-d);
+   cursor: pointer;
+   position: absolute;
+   bottom: 15px;
+   right: 15px
+}
+
+.media-title .title {
+   font-family: 'Proxima Nova';
+   font-size: 20px;
+   font-weight: 700;
+   color: var(--text-color-l);
+   margin-bottom: 15px
+}
+
+@media only screen and (max-width: 425px) {
+   .media-title {
+      font-size: 18px
+   }
+}
+
+.media .sdbr {
+   display: flex;
+   flex-direction: column;
+   flex: 0 0 260px;
+   padding: 0px 5px
+}
+
+@media only screen and (max-width: 1100px) {
+   .media .sdbr {
+      display: none
+   }
+}
+
+.media .sdbr-item {
+   display: flex;
+   align-items: center;
+   margin-bottom: 15px
+}
+
+@media only screen and (max-width: 1280px) {
+   .media .sdbr-item {
+      margin-bottom: 10px
+   }
+}
+
+.media .sdbr-item:last-child {
+   margin-bottom: 0
+}
+
+.media .sdbr-item img {
+   border-radius: 10px;
+   margin-right: 10px
+}
+
+.media .sdbr-item p {
+   font-family: 'Proxima Nova';
+   font-size: 12px;
+   font-weight: 400;
+   color: var(--text-color-d);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-height: 56px
+}
+
+@media only screen and (min-width: 1025px) {
+   .header-nav .menu .menu-link:hover {
+      color: var(--main-color);
+      transition: color .3s
+   }
+   .header-search .search:hover {
+      background-color: var(--text-color-l);
+      transition: all .3s
+   }
+   .header-search .search:hover ~ .search-btn .icon {
+      fill: var(--text-color-d);
+      transition: all .3s
+   }
+   .header-search .search:hover::placeholder {
+      color: var(--text-color-d);
+      transition: all .3s
+   }
+   .header-nav .menu .menu-link:hover .icon {
+      fill: var(--main-color);
+      transition: fill .3s
+   }
+   .login-btn:hover {
+      background-color: var(--text-color-l);
+      color: var(--text-color-d);
+      transition: all .3s
+   }
+   .login-btn:hover .icon{
+      fill: var(--text-color-d);
+      transition: all .3s
+   }
+
+   .more-btn:hover {
+      background-color: var(--text-color-l);
+      color: var(--text-color-d);
+      transition: all .3s
+   }
+
+   .sidebar-link:hover {
+      background-color: var(--bg-color-d);
+      transition: all .3s
+   }
+
+   .sidebar-link:hover .link-name {
+      color: var(--main-color);
+      transition: all .3s
+   }
+
+   .sidebar-link:hover .number {
+      color: var(--text-color-l);
+      transition: all .3s
+   }
+
+   .card:hover .card-title {
+      color: var(--main-color);
+      transition: color .3s
+   }
+
+   .card:hover .card-top .duration,
+   .card:hover .card-top .rait,
+   .card:hover .card-top .quantity,
+   .card:hover .card-top .quality {
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s
+   }
+
+   .pagination a:hover {
+      background-color: var(--text-color-l);
+      color: var(--text-color-d);
+      transition: all .3s
+   }
+
+   .pagination a.active:hover {
+      background-color: var(--main-color);
+      color: var(--text-color-l);
+      transition: all .3s
+   }
+
+   .pagination a:hover .icon{
+      fill: var(--text-color-d);
+      transition: fill .3s
+   }
+
+   .categories .content .list .item a:hover {
+      background-color: var(--bg-color-l);
+      transition: color .3s
+   }
+
+   .categories .content .list .item a:hover .number {
+      color: var(--text-color-l);
+      transition: color .3s
+   }
+
+   .tags-item a:hover {
+      background-color: var(--text-color-l);
+      color: var(--text-color-d);
+      transition: all .3s
+   }
+
+   .media .sdbr-item:hover p {
+      color: var(--main-color);
+      transition: color .3s
+   }
+
+   .media-body .comments .form-comment .comment-btn:hover {
+      color: var(--main-color);
+      transition: all .3s
+   }
+
+   .media-body .tabs .tab.active:hover .icon{
+      fill: var(--text-color-l);
+      transition: all .3s
+   }
+
+   .media-body .tabs .tab.active:hover span{
+      color: var(--text-color-l);
+      transition: all .3s
+   }
+
+   .media-body .tabs .tab:hover .icon{
+      fill: var(--main-color);
+      transition: all .3s
+   }
+
+   .media-body .tabs .tab:hover span{
+      color: var(--main-color);
+      transition: all .3s
+   }
+
+   .media-body .tabs .video-box .rating .icon-like:hover {
+      fill: var(--text-color-d);
+      transition: fill .3s
+   }
+
+   .media-body .tabs .video-box .rating .icon-dislike:hover {
+      fill: var(--text-color-d);
+      transition: fill .3s
+   }
+
+   .media-body .tabs .video-box .favourite:hover .icon {
+      fill: var(--main-color);
+      transition: fill .3s
+   }
+
+   .media-body .tabs .video-box .favourite:hover span {
+      color: var(--main-color);
+      transition: color .3s
+   }
+
+   .media-body .descr .info-item a:hover {
+      color: var(--main-color);
+      transition: color .3s
+   }
+}
